@@ -1,0 +1,22 @@
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  datasource:
+    url: jdbc:h2:mem:test #설정을 하지않으면 매번 무작위로 url이 생성된다.
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    defer-datasource-initialization: true #이 옵션이 있어야만 data.sql문이 자동으로 적용된다.
+    database-platform: H2
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
